@@ -39,30 +39,6 @@ function render(variables = {}) {
     variables.country ? variables.country : " "
   }</h3>`;
 
-  let twitter = `<li>
-    <a href="${variables.twitter}">
-      <i class="fa-brands fa-twitter"></i>
-    </a>
-  </li>`;
-
-  let github = `<li>
-    <a href="${variables.github}">
-      <i class="fa-brands fa-github"></i>
-    </a>
-  </li>`;
-
-  let linkedin = `<li>
-    <a href="${variables.linkedin}">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-  </li>`;
-
-  let instagram = `<li>
-    <a href="${variables.instagram}">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-  </li>`;
-  // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
            
@@ -70,11 +46,11 @@ function render(variables = {}) {
           ${name}
           ${role}
           ${location}
-          
-            ${twitter}
-            ${github}
-            ${linkedin}
-            ${instagram}
+          <ul class= ${variables.socialMediaPosition}>
+            <li><a href="${variables.twitter}"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="${variables.github}"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="${variables.linkedin}"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="${variables.instagram}"><i class="fa-brands fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
